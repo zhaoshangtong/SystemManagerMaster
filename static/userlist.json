@@ -1,0 +1,27 @@
+{
+    "list": [{
+            "id": 1,
+            "userName": "admin",
+            "loginName": "admin",
+            "role": "管理员",
+            "status": "1",
+            "tel": "123445555"
+        },
+        {
+            "id": 2,
+            "userName": "zhao",
+            "loginName": "zhaost",
+            "role": "普通用户",
+            "status": "1",
+            "tel": "1290033003"
+        },
+        {
+            "id": 3,
+            "userName": "xie",
+            "loginName": "xiel",
+            "role": "普通用户",
+            "status": "0",
+            "tel": "12435335334"
+        }
+    ]
+}
