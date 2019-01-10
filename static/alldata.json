@@ -1,0 +1,969 @@
+[
+    {
+        "name": "排水系统",
+        "data": [
+            {
+                "name": "160泵站",
+                "params": [
+                    {
+                        "name": "水仓液位（M）",
+                        "tag": "OPCPS.STAT38(AI)"
+                    },
+                    {
+                        "name": "液位速度（米/h）",
+                        "tag": "OPCPS.Q"
+                    }
+                ],
+                "childNodes": [
+                    {
+                        "name": "1#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.M360"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.1#YC"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.STAT18(AI)"
+                            },
+                            {
+                                "name": "电流B（A）",
+                                "tag": "OPCPS.STAT19(AI)"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.STAT34(AI)"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.1#ZSKF"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.1#ZSGF"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.1#PQKF"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.1#PQGF"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.1#DL"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.1#AU"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.M361"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.2#YC"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.STAT20(AI)"
+                            },
+                            {
+                                "name": "电流B（A）",
+                                "tag": "OPCPS.STAT21(AI)"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.STAT35(AI)"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.2#ZSKF"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.2#ZSGF"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.2#PQKF"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.2#PQGF"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.2#DL"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.2#AU"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.M362"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.3#YC"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.STAT22(AI)"
+                            },
+                            {
+                                "name": "电流B（A）",
+                                "tag": "OPCPS.STAT23(AI)"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.STAT36(AI)"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.3#ZSKF"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.3#ZSGF"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.3#PQKF"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.3#PQGF"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.3#DL"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.3#AU"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.M363"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.4#YC"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.STAT24(AI)"
+                            },
+                            {
+                                "name": "电流B（A）",
+                                "tag": "OPCPS.STAT25(AI)"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.STAT37(AI)"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.4#ZSKF"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.4#ZSGF"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.4#PQKF"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.4#PQGF"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.4#DL"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.4#AU"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "320泵站",
+                "params": [
+                    {
+                        "name": "水仓液位（M）",
+                        "tag": "OPCPS.bc_yw"
+                    }
+                ],
+                "childNodes": [
+                    {
+                        "name": "1#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.1#b_gy_ok"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.1#b_auto"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.1#b_dl"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.1#b_yl"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf1_k"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf1_g"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf1_k"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf1_g"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b1_sd_qd"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b1_sd_tz"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.1#b_yc_auto"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.2#b_gy_ok"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.2#b_auto"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.2#b_dl"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.2#b_yl"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf2_k"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf2_g"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf2_k"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf2_g"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b2_sd_tz"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.2#b_yc_auto"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.3#b_gy_ok"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.3#b_auto"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.3#b_dl"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.3#b_yl"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf3_k"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf3_g"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf3_k"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf3_g"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b3_sd_tz"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.3#b_yc_auto"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.4#b_gy_ok"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.4#b_auto"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.4#b_dl"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.4#b_yl"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf4_k"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf4_g"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf4_k"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf4_g"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b4_sd_tz"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.4#b_yc_auto"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "470泵站",
+                "params": [
+                    {
+                        "name": "水仓液位（M）",
+                        "tag": "OPCPS.bc_yw_4"
+                    }
+                ],
+                "childNodes": [
+                    {
+                        "name": "1#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.1#b_gy_ok_4"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.1#b_auto_4"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.1#b_dl_4"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.1#b_yl_4"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf1_k_4"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf1_g_4"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf1_k_4"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf1_g_4"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b1_sd_qd_4"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b1_sd_tz_4"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.1#b_yc_auto_4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.2#b_gy_ok_4"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.2#b_auto_4"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.2#b_dl_4"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.2#b_yl_4"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf2_k_4"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf2_g_4"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf2_k_4"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf2_g_4"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b2_sd_qd_4"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b2_sd_tz_4"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.2#b_yc_auto_4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.3#b_gy_ok_4"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.3#b_auto_4"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.3#b_dl_4"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.3#b_yl_4"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf3_k_4"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf3_g_4"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf3_k_4"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf3_g_4"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b3_sd_qd_4"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b3_sd_tz_4"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.3#b_yc_auto_4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.4#b_gy_ok_4"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.4#b_auto_4"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.4#b_dl_4"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.4#b_yl_4"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf4_k_4"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf4_g_4"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf4_k_4"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf4_g_4"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b4_sd_qd_4"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b4_sd_tz_4"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.4#b_yc_auto_4"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.5#b_gy_ok_4"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.5#b_auto_4"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.5#b_dl_4"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.5#b_yl_4"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf5_k_4"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf5_g_4"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf5_k_4"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf5_g_4"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b5_sd_qd_4"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b5_sd_tz_4"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.5#b_yc_auto_4"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "970泵站",
+                "params": [
+                    {
+                        "name": "前轴温度",
+                        "tag": "OPCPS.1#b_qwd"
+                    },
+                    {
+                        "name": "后轴温度",
+                        "tag": "OPCPS.1#b_hwd"
+                    },
+                    {
+                        "name": "水仓液位（M）",
+                        "tag": "OPCPS.bc_yw_9"
+                    }
+                ],
+                "childNodes": [
+                    {
+                        "name": "1#泵",
+                        "params": [
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.1#b_gy_ok_9"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.1#b_auto_9"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.1#b_dl_9"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.1#b_yl_9"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf1_k_9"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf1_g_9"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf1_k_9"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf1_g_9"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b1_sd_qd_9"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b1_sd_tz_9"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.1#b_yc_auto_9"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "2#泵",
+                        "params": [
+                            {
+                                "name": "前轴温度",
+                                "tag": "OPCPS.2#b_qwd"
+                            },
+                            {
+                                "name": "后轴温度",
+                                "tag": "OPCPS.2#b_hwd"
+                            },
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.2#b_gy_ok_9"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.2#b_auto_9"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.2#b_dl_9"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.2#b_yl_9"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf2_k_9"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf2_g_9"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf2_k_9"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf2_g_9"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b2_sd_qd_9"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b2_sd_tz_9"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.2#b_yc_auto_9"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "3#泵",
+                        "params": [
+                            {
+                                "name": "前轴温度",
+                                "tag": "OPCPS.3#b_qwd"
+                            },
+                            {
+                                "name": "后轴温度",
+                                "tag": "OPCPS.3#b_hwd"
+                            },
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.3#b_gy_ok_9"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.3#b_auto_9"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.3#b_dl_9"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.3#b_yl_9"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf3_k_9"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf3_g_9"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf3_k_9"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf3_g_9"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b3_sd_qd_9"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b3_sd_tz_9"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.3#b_yc_auto_9"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "4#泵",
+                        "params": [
+                            {
+                                "name": "前轴温度",
+                                "tag": "OPCPS.4#b_qwd"
+                            },
+                            {
+                                "name": "后轴温度",
+                                "tag": "OPCPS.4#b_hwd"
+                            },
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.4#b_gy_ok_9"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.4#b_auto_9"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.4#b_dl_9"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.4#b_yl_9"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf4_k_9"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf4_g_9"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf4_k_9"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf4_g_9"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b4_sd_qd_9"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b4_sd_tz_9"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.4#b_yc_auto_9"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "5#泵",
+                        "params": [
+                            {
+                                "name": "前轴温度",
+                                "tag": "OPCPS.5#b_qwd"
+                            },
+                            {
+                                "name": "后轴温度",
+                                "tag": "OPCPS.5#b_hwd"
+                            },
+                            {
+                                "name": "未就绪/就绪",
+                                "tag": "OPCPS.5#b_gy_ok_9"
+                            },
+                            {
+                                "name": "就地/集中",
+                                "tag": "OPCPS.5#b_auto_9"
+                            },
+                            {
+                                "name": "电流A（A）",
+                                "tag": "OPCPS.5#b_dl_9"
+                            },
+                            {
+                                "name": "压力（MPa）",
+                                "tag": "OPCPS.5#b_yl_9"
+                            },
+                            {
+                                "name": "注水阀开",
+                                "tag": "OPCPS.zsf5_k_9"
+                            },
+                            {
+                                "name": "注水阀关",
+                                "tag": "OPCPS.zsf5_g_9"
+                            },
+                            {
+                                "name": "排气阀开",
+                                "tag": "OPCPS.pqf5_k_9"
+                            },
+                            {
+                                "name": "排气阀关",
+                                "tag": "OPCPS.pqf5_g_9"
+                            },
+                            {
+                                "name": "水泵启动",
+                                "tag": "OPCPS.b5_sd_qd_9"
+                            },
+                            {
+                                "name": "水泵停止",
+                                "tag": "OPCPS.b5_sd_tz_9"
+                            },
+                            {
+                                "name": "手动/自动",
+                                "tag": "OPCPS.5#b_yc_auto_9"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "提升机",
+        "data": []
+    }
+]
