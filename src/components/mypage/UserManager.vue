@@ -62,13 +62,6 @@
     <el-dialog title="编辑" :visible.sync="editVisible" width="30%">
       <el-form ref="form" :model="form" label-width="80px">
         <el-form-item label="用户名">
-          <!-- <el-date-picker
-            type="date"
-            placeholder="选择日期"
-            v-model="form.date"
-            value-format="yyyy-MM-dd"
-            style="width: 100%;"
-          ></el-date-picker>-->
           <el-input v-model="form.userName"></el-input>
         </el-form-item>
         <el-form-item label="登录名">
