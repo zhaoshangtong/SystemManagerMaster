@@ -28,7 +28,7 @@ export default {
       firstMenuData: []
     };
   },
-  components: { elTable },
+  // components: { elTable },
   computed: {},
   created() {
     //获取json数据
