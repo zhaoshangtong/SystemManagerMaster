@@ -29,6 +29,10 @@ export default {
       firstMenuData: [],
     };
   },
+<<<<<<< HEAD
+=======
+  // components: { elTable },
+>>>>>>> ce281c9425977fe1d075a98808eb4187dd7fe9fb
   computed: {},
   created() {
     //获取json数据
