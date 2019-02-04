@@ -7,7 +7,8 @@
           <div style="padding: 6px;">
             <span>{{menu.name}}</span>
             <div class="bottom clearfix">
-              <el-button type="text" class="button">查看数据详情</el-button>
+              <el-button type="text" class="button" :key="menu.id" @click="goQueryData(menu)">查看数据详情</el-button>
+              <!-- <router-link :to="'/datalistview/'+menu.id" :key="menu.id" class="button">查看数据详情</router-link> !-->
             </div>
           </div>
         </el-card>
@@ -25,10 +26,9 @@ export default {
     return {
       currentDate: new Date(),
       elColSpan: 4,
-      firstMenuData: []
+      firstMenuData: [],
     };
   },
-  components: { elTable },
   computed: {},
   created() {
     //获取json数据
@@ -48,7 +48,16 @@ export default {
     handleListener() {
       bus.$on("collapse", this.handleBus);
     },
-    handleBus(msg) {}
+    handleBus(msg) {},
+    goQueryData(menu){
+      this.$router.push({
+        path:"/datalistview/"+menu.id,
+        name:"datalist",
+        params: {
+            id: menu.id
+          }
+      })
+    }
   }
 };
 </script>

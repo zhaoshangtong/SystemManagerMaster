@@ -1,0 +1,21 @@
+{
+    "error" : 0,
+    "results" : [
+       {
+          "error" : 0,
+          "name" : "OPCTS.A23",
+          "quality" : 0,
+          "time" : "2019-01-18 11:14:39",
+          "value" : "-419.859985",
+          "vt" : 3
+       },
+       {
+          "error" : 0,
+          "name" : "OPCTS.A14",
+          "quality" : 0,
+          "time" : "2019-01-18 11:13:44",
+          "value" : "5",
+          "vt" : 2
+       }
+    ]
+ }

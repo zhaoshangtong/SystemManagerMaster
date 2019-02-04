@@ -45,6 +45,11 @@ export default {
   },
   methods: {
     submitForm(formName) {
+      if(true){
+        //跳转首页
+        this.$router.push("/");
+        localStorage.setItem("ms_username", "admin");
+      }
       this.$refs[formName].validate(valid => {
         if (valid) {
           //获取sid
@@ -58,7 +63,8 @@ export default {
             if (res.data.error == 0) {
               //登录成功
               let sid = res.data.results.sid;
-              localStorage.setItem("sid", sid);
+              let exprise=res.data.results.expiration;
+              localStorage.setItem("login", {sid,exprise});
               localStorage.setItem("ms_username", this.ruleForm.username);
               //跳转首页
               this.$router.push("/");

@@ -1,8 +1,9 @@
-[{
+[
+    {
         "id": 1,
         "parentId": 0,
         "name": "排水系统",
-        "data": [{
+        "children": [{
                 "id": 11,
                 "parentId": 1,
                 "name": "160泵站",
@@ -15,7 +16,7 @@
                         "tag": "OPCPS.Q"
                     }
                 ],
-                "childNodes": [{
+                "children": [{
                         "id": 111,
                         "parentId": 11,
                         "name": "1#泵",
@@ -225,7 +226,7 @@
                     "name": "水仓液位（M）",
                     "tag": "OPCPS.bc_yw"
                 }],
-                "childNodes": [{
+                "children": [{
                         "id": 121,
                         "parentId": 12,
                         "name": "1#泵",
@@ -423,7 +424,7 @@
                     "name": "水仓液位（M）",
                     "tag": "OPCPS.bc_yw_4"
                 }],
-                "childNodes": [{
+                "children": [{
                         "id": 131,
                         "parentId": 13,
                         "name": "1#泵",
@@ -692,7 +693,7 @@
                         "tag": "OPCPS.bc_yw_9"
                     }
                 ],
-                "childNodes": [{
+                "children": [{
                         "id": 141,
                         "parentId": 14,
                         "name": "1#泵",
@@ -982,7 +983,7 @@
         "id": 2,
         "parentId": 0,
         "name": "提升机",
-        "data": [{
+        "children": [{
                 "id": 21,
                 "parentId": 2,
                 "name": "主画面信息",

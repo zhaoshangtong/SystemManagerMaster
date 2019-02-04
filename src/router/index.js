@@ -18,7 +18,22 @@ export default new Router({
                     path: '/dashboard',
                     component: resolve => require(['../components/page/Dashboard.vue'], resolve),
                     meta: {
-                        title: '系统首页'
+                        title: '数据中心'
+                    }
+                },{
+                    path: '/datalistview/:id',
+                    name:'datalist',
+                    component: resolve => require(['../components/mypage/DataList.vue'], resolve),
+                    meta: {
+                        title: '查看数据'
+                    }
+                },
+                {
+                    path: '/realtime/:id/:itemId/:tags',
+                    name:'realtimedata',
+                    component: resolve => require(['../components/mypage/RealTimeData.vue'], resolve),
+                    meta: {
+                        title: '实时数据'
                     }
                 },
                 {
