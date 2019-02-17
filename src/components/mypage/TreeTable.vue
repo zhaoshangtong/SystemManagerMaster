@@ -4,16 +4,6 @@
 			<table>
 				<tr>
 					<td class="td1">站点名称</td>
-					<!-- <td class="td2">负责人</td>
-					<td class="td3" @click="isDesc=!isDesc">
-						创建时间
-						<div class="arrow">
-							<span class="up-arrow" :class="{'sort':isDesc}"></span>
-							<span class="down-arrow" :class="{'sort':!isDesc}"></span>
-						</div>
-					</td>
-					<td class="td4">工作经验</td>
-					<td class="td5">发布时间</td> -->
 					<td class="td6">操作</td>
 				</tr>
 			</table>

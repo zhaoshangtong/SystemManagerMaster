@@ -8,7 +8,11 @@
             <span>{{menu.name}}</span>
             <div class="bottom clearfix">
               <el-button type="text" class="button" :key="menu.id" @click="goQueryData(menu)">查看数据详情</el-button>
-              <!-- <router-link :to="'/datalistview/'+menu.id" :key="menu.id" class="button">查看数据详情</router-link> !-->
+              <!-- <router-link
+                :to="'/dashboard/datalistview/'+menu.id"
+                :key="menu.id"
+                class="button"
+              >查看数据详情</router-link>!-->
             </div>
           </div>
         </el-card>
@@ -19,7 +23,6 @@
 
 <script>
 import bus from "../common/bus";
-
 export default {
   name: "dashboard",
   data() {
@@ -52,9 +55,9 @@ export default {
     handleBus(msg) {},
     goQueryData(menu) {
       this.$router.push({
-        path: "/datalistview/" + menu.id,
+        path: "/datalistview/",
         name: "datalist",
-        params: {
+        query: {
           id: menu.id
         }
       });

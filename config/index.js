@@ -12,10 +12,17 @@ module.exports = {
         assetsPublicPath: '/',
         proxyTable: {
             '/api': {
-                target: 'http://oxfordsunny.free.idcfengye.com/webapi/',
+                target: 'http://zxc.vipgz1.idcfengye.com/webapi/',
                 changeOrigin: true,
                 pathRewrite: {
                     '^/api': ''
+                }
+            },
+            '/historyApi': {
+                target: 'http://localhost:8000/api/',
+                changeOrigin: true,
+                pathRewrite: {
+                    '^/historyApi': ''
                 }
             },
             '/ms': {

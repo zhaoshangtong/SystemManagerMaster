@@ -1,106 +1,225 @@
 <template>
-    <div id="myChart" :style="{width:'300px',weight:'300px'}">
-
-    </div>
+  <div>
+    <div
+      id="myChart"
+      v-show="!IsShowMessage"
+      :style="{width:'100%',height:'800px'}"
+      v-loading="loading"
+    ></div>
+    <div v-show="IsShowMessage">没有需要用图表展示的tag~</div>
+  </div>
 </template>
 <script>
-import echarts from 'echarts'
+import datalistdata from "../../../static/alldata.json";
+import querydata from "../../../static/querydata.json";
 export default {
-    props:[legendData],
-    data(){
-        return{
-            interval:0,
-            tags:this.$route.params.tags,
-            option = {
-    title: {
-        text: '实时数据'
-    },
-    tooltip: {
-        trigger: 'axis'
-    },
-    legend: {
-        data:[]//tag值数组
-    },
-    grid: {
-        left: '3%',
-        right: '4%',
-        bottom: '3%',
-        containLabel: true
-    },
-    toolbox: {
-        feature: {
+  data() {
+    return {
+      interval: 0,
+      tags: this.$route.query.tags,
+      itemId: this.$route.query.itemId,
+      id: this.$route.query.id,
+      IsShowMessage: false,
+      loading: false,
+      option: {
+        title: {
+          text: ""
+        },
+        tooltip: {
+          trigger: "axis"
+        },
+        legend: {
+          data: [] //tag值数组
+        },
+        grid: {
+          left: "3%",
+          right: "4%",
+          bottom: "3%",
+          containLabel: true
+        },
+        toolbox: {
+          feature: {
             saveAsImage: {}
-        }
-    },
-    xAxis: {
-        type: 'category',
-        boundaryGap: false,
-        data: []//横坐标
-    },
-    yAxis: {
-        type: 'value'
-    },
-    series: [
-        // {
-        //     name:'邮件营销',
-        //     type:'line',
-              //     stack: '总量',
-           //     data:[120, 132, 101, 134, 90, 230, 210]
-              // },
-             ]
-           },
-        }
-    },
-    mounted(){
-        let myChart = this.$echarts.init(document.getElementById('myChart'))
-        
-        this.interval = setInterval(() => {
-            if(option.length<=5){
-                let data=this.getData()
-
-            }
-        }, 1000)
-        myChart.setOption(option)
-    },
-    methods:{
-        getData(){
-            let exprise=localStorage.getItem("login").exprise;
-            var sid;
-            var now=new Date();
-            var dateDiff=exprise.getTime()-now.getTime();
-            if(dateDiff<2000){//小于2s时
-            //重新登陆
-            var login_url =
-            this.$HttpApi +
-            "login?user=" +
-            this.ruleForm.username +
-            "&pwd=21232F297A57A5A743894A0E4A801FC3";
-          this.$axios.get(login_url).then(res => {
-            if (res.data.error == 0) {
-              //登录成功
-              sid = res.data.results.sid;
-              let exprise=res.data.results.expiration;
-              localStorage.setItem("login", {sid,exprise});
-            }
-          })
-        }else{
-            sid=localStorage.getItem("login").sid;
-        }
-        
-        let url=this.$HttpApi +"get_snapshot?sid="+sid+"&tag="+this.tags;
-        //获取json数据中的泵站数据
-        this.$axios.get(url).then(res => {
-            var result=res.results;
-            //datas数据编辑
-            
-        });
-        }
-    },
-    beforeDestroy(){
-        clearInterval(interval)
+          }
+        },
+        xAxis: {
+          type: "category",
+          boundaryGap: false,
+          data: [] //横坐标
+        },
+        yAxis: {
+          type: "value"
+        },
+        series: []
+      }
+    };
+  },
+  mounted() {
+    if (this.checkShow()) {
+      this.IsShowMessage = false;
+      this.loading = true;
+      this.interval = setInterval(() => {
+        this.getData();
+      }, 2000);
+    } else {
+      this.IsShowMessage = true;
     }
-}
+  },
+  methods: {
+    getData1() {
+      var result = querydata.results;
+      this.getOption(result);
+    },
+    checkShow() {
+      let id = this.id;
+      let itemid = this.itemId;
+      var children = datalistdata.filter(o => o.id == id)[0].children;
+      if (itemid > 100) {
+        var parentId = String(itemid).substring(0, 2);
+        children = children.filter(o => o.id == parentId)[0].children;
+      }
+      var params = children
+        .filter(o => o.id == itemid)[0]
+        .params.filter(p => p.showEChars);
+      if (params.length > 0) {
+        return true;
+      }
+      return false;
+    },
+    getOption(result) {
+      let id = this.id;
+      let itemid = this.itemId;
+      var children = datalistdata.filter(o => o.id == id)[0].children;
+      if (itemid > 100) {
+        var parentId = String(itemid).substring(0, 2);
+        children = children.filter(o => o.id == parentId)[0].children;
+      }
+      var params = children
+        .filter(o => o.id == itemid)[0]
+        .params.filter(p => p.showEChars);
+      for (var i = 0; i < result.length; i++) {
+        var tag = result[i].name;
+        var nameParam = params.filter(o => o.tag == tag)[0];
+        var name = "";
+        if (nameParam != undefined) {
+          name = nameParam.name;
+        } else {
+          continue;
+        }
+        var time = result[i].time;
+        var value = result[i].value;
+        var series1 = this.option.series.filter(o => o.name == tag)[0];
+        if (this.option.legend.data.indexOf(tag) == -1) {
+          this.option.legend.data.push(tag);
+        }
+        if (this.option.xAxis.data.length > 5) {
+          this.option.xAxis.data.shift();
+          this.option.xAxis.data.push(time);
+        } else {
+          this.option.xAxis.data.push(time);
+        }
+
+        if (series1 == undefined) {
+          this.option.series.push({
+            name: tag,
+            type: "line",
+            data: [value]
+          });
+        } else {
+          if (series1.data.length > 5) {
+            series1.data.shift();
+            series1.data.push(value);
+          } else {
+            series1.data.push(value);
+          }
+        }
+      }
+      let myChart = this.$echarts.init(document.getElementById("myChart"));
+      myChart.setOption(this.option);
+      this.loading = false;
+    },
+    getData() {
+      // this.loading = true;
+      let login_str = localStorage.getItem("login");
+      let login = {};
+      if (login_str != undefined) {
+        login = JSON.parse(login_str);
+      }
+
+      let exprise = new Date();
+      exprise = exprise.setDate(exprise.getDate() - 1);
+      if (login_str != undefined) {
+        exprise = login.exprise;
+      }
+      exprise = new Date(exprise);
+      var sid;
+      var now = new Date();
+      //var dateDiff = parseInt(exprise - now) / 1000;(如果别的人请求了会导致sid变)
+      var dateDiff = 0;
+      if (dateDiff < 20) {
+        //小于2s时
+        //重新登陆
+        var login_url =
+          this.$HttpApi +
+          "login?user=admin" +
+          "&pwd=21232F297A57A5A743894A0E4A801FC3";
+        this.$axios.get(login_url).then(res => {
+          if (res.data.error == 0) {
+            //登录成功
+            sid = res.data.results.sid;
+            let exprise = res.data.results.expiration;
+            localStorage.setItem("login", JSON.stringify({ sid, exprise }));
+            let url =
+              "http://zxc.vipgz1.idcfengye.com/webapi/get_snapshot?sid=" +
+              sid +
+              "&tag=" +
+              this.tags;
+
+            //let postdata = { sid: sid, tag: this.tags };
+            //获取json数据中的泵站数据
+            this.$axios.post(url).then(res => {
+              var result = res.data.results;
+              //datas数据编辑
+              var isSucess = false;
+              if (result.length > 0) {
+                result.forEach(element => {
+                  if (element.error != 0) {
+                    isSucess = false;
+                    return;
+                  } else {
+                    isSucess = true;
+                  }
+                });
+              }
+              if (isSucess) {
+                this.getOption(result);
+              }
+            });
+          }
+        });
+      } else {
+        sid = login.sid;
+        let url =
+          "http://zxc.vipgz1.idcfengye.com/webapi/get_snapshot?sid=" +
+          sid +
+          "&tag=" +
+          this.tags;
+
+        console.log(this.tags, url);
+        //let postdata = { sid: sid, tag: this.tags };
+        //获取json数据中的泵站数据
+        this.$axios.post(url).then(res => {
+          var result = res.data.results;
+          //datas数据编辑
+          this.getOption(result);
+        });
+      }
+    }
+  },
+  beforeDestroy() {
+    clearInterval(this.interval);
+  }
+};
 </script>
 <style>
-
 </style>

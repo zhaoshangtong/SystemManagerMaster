@@ -7,14 +7,16 @@ import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 // import '../static/css/theme-green/index.css';       // 浅绿色主题
 import '../static/css/icon.css';
 import "babel-polyfill";
+import echarts from 'echarts'
 
+Vue.prototype.$echarts = echarts
 
 Vue.use(ElementUI, {
     size: 'small'
 });
 Vue.prototype.$axios = axios;
 Vue.prototype.$HttpApi = '/api';
-
+Vue.prototype.$HttpHistoryApi = '/historyApi';
 //使用钩子函数对路由进行权限跳转
 router.beforeEach((to, from, next) => {
     const role = localStorage.getItem('ms_username');
