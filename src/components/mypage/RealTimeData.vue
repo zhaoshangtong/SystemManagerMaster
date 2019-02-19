@@ -1,47 +1,32 @@
 <template>
-  <div>
-    <div class="crumbs">
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item>
-          <i class="el-icon-lx-copy"></i>
-          实时数据-{{childName}}
-        </el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
-    <div class="container">
-      <el-tabs v-model="tabName">
-        <el-tab-pane label="数据表格" name="datatable">
-          <el-table :data="datas" :show-header="false" style="width: 100%" v-loading="loading">
-            <el-table-column>
-              <template slot-scope="scope">
-                <span class="message-title">{{scope.row.name}}</span>
-              </template>
-            </el-table-column>
-            <el-table-column>
-              <template slot-scope="scope">
-                <span class="message-title">{{scope.row.tag}}</span>
-              </template>
-            </el-table-column>
-            <el-table-column>
-              <template slot-scope="scope">
-                <span class="message-title">{{scope.row.time}}</span>
-              </template>
-            </el-table-column>
-            <el-table-column prop="value" width="180"></el-table-column>
-            <!-- <el-table-column width="120">
-                            <template slot-scope="scope">
-                                <el-button size="small" @click="handleRead(scope.$index)">标为已读</el-button>
-                            </template>
-            </el-table-column>-->
-          </el-table>
-        </el-tab-pane>
-        <el-tab-pane label="数据图表" name="echars">
-          <template v-if="tabName === 'echars'">
-            <realTimeCharts/>
-          </template>
-        </el-tab-pane>
-      </el-tabs>
-    </div>
+  <div class="container">
+    <el-tabs v-model="tabName">
+      <el-tab-pane label="数据表格" name="datatable">
+        <el-table :data="datas" :show-header="false" style="width: 100%" v-loading="loading">
+          <el-table-column>
+            <template slot-scope="scope">
+              <span class="message-title">{{scope.row.name}}</span>
+            </template>
+          </el-table-column>
+          <el-table-column>
+            <template slot-scope="scope">
+              <span class="message-title">{{scope.row.tag}}</span>
+            </template>
+          </el-table-column>
+          <el-table-column>
+            <template slot-scope="scope">
+              <span class="message-title">{{scope.row.time}}</span>
+            </template>
+          </el-table-column>
+          <el-table-column prop="value" width="180"></el-table-column>
+        </el-table>
+      </el-tab-pane>
+      <el-tab-pane label="数据图表" name="echars">
+        <template v-if="tabName === 'echars'">
+          <realTimeCharts/>
+        </template>
+      </el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 <script>
@@ -63,6 +48,7 @@ export default {
   },
   components: { realTimeCharts },
   mounted() {
+    document.title = "实时: " + this.childName;
     this.loading = true;
     this.interval = setInterval(() => {
       this.getData();
@@ -101,7 +87,6 @@ export default {
       }
     },
     getData() {
-      
       let login_str = localStorage.getItem("login");
       let login = {};
       if (login_str != undefined) {

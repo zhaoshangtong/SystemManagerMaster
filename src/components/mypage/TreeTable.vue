@@ -49,7 +49,6 @@
 		watch: {
 			'list': {
 				handler() {
-					console.log('ddddd')
 					this.initTreeData()
 				},
 				deep: true
@@ -62,7 +61,6 @@
 		},
 		methods: {
 			initTreeData() {
-				console.log('处理前的:', JSON.parse(JSON.stringify(this.list)))
 				// 这里一定要转化，要不然他们的值监听不到变化
 				let tempData = JSON.parse(JSON.stringify(this.list))
 				let reduceDataFunc = (data, level) => {
@@ -78,7 +76,6 @@
 					})
 				}
 				reduceDataFunc(tempData, 1)
-				console.log('处理后的:', tempData)
 				this.treeDataSource = tempData
 			},
 			getMore() {

@@ -1,58 +1,48 @@
 <template>
-  <div>
-    <div class="crumbs">
-      <el-breadcrumb separator="/">
-        <el-breadcrumb-item>
-          <i class="el-icon-lx-copy"></i>
-          历史数据-{{childName}}
-        </el-breadcrumb-item>
-      </el-breadcrumb>
-    </div>
-    <div class="container">
-      <el-tabs v-model="tabName">
-        <el-tab-pane label="数据表格" name="datatable">
-          <div class="handle-box" style="margin:10px;">
-            <el-date-picker type="date" placeholder="选择日期" v-model="start_date"></el-date-picker>至
-            <el-date-picker type="date" placeholder="选择日期" v-model="end_date"></el-date-picker>
-            <el-button type="primary" icon="search" @click="search">搜索</el-button>
-          </div>
+  <div class="container">
+    <el-tabs v-model="tabName">
+      <el-tab-pane label="数据表格" name="datatable">
+        <div class="handle-box" style="margin:10px;">
+          <el-date-picker type="date" placeholder="选择日期" v-model="start_date"></el-date-picker>至
+          <el-date-picker type="date" placeholder="选择日期" v-model="end_date"></el-date-picker>
+          <el-button type="primary" icon="search" @click="search">搜索</el-button>
+        </div>
 
-          <el-table
-            :data="datas"
-            border
-            stripe
-            v-loading="loading"
-            class="table"
-            ref="multipleTable"
-            @selection-change="handleSelectionChange"
-          >
-            <el-table-column
-              v-for="(item,index) in ColunmsData"
-              :key="index"
-              :prop="item.tag"
-              :label="item.name"
-              align="center"
-            ></el-table-column>
-          </el-table>
-          <div class="pagination">
-            <el-pagination
-              background
-              @current-change="handleCurrentChange"
-              layout="prev, pager, next"
-              :total="totalCount"
-              :page-size="20"
-              :pager-count="11"
-              :current-page="cur_page"
-            ></el-pagination>
-          </div>
-        </el-tab-pane>
-        <el-tab-pane label="数据图表" name="echars">
-          <template v-if="tabName === 'echars'">
-            <historyChart/>
-          </template>
-        </el-tab-pane>
-      </el-tabs>
-    </div>
+        <el-table
+          :data="datas"
+          border
+          stripe
+          v-loading="loading"
+          class="table"
+          ref="multipleTable"
+          @selection-change="handleSelectionChange"
+        >
+          <el-table-column
+            v-for="(item,index) in ColunmsData"
+            :key="index"
+            :prop="item.tag"
+            :label="item.name"
+            align="center"
+          ></el-table-column>
+        </el-table>
+        <div class="pagination">
+          <el-pagination
+            background
+            @current-change="handleCurrentChange"
+            layout="prev, pager, next"
+            :total="totalCount"
+            :page-size="20"
+            :pager-count="11"
+            :current-page="cur_page"
+          ></el-pagination>
+        </div>
+      </el-tab-pane>
+      <el-tab-pane label="数据图表" name="echars">
+        <template v-if="tabName === 'echars'">
+          <historyChart/>
+        </template>
+      </el-tab-pane>
+    </el-tabs>
   </div>
 </template>
 <script>
@@ -77,6 +67,7 @@ export default {
   },
   components: { historyChart },
   mounted() {
+    document.title = "历史: " + this.childName;
     this.getData();
   },
   methods: {

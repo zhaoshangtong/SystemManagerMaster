@@ -2,18 +2,11 @@
   <div>
     <el-row :gutter="20">
       <el-col :span="elColSpan" v-for="(menu, index) in firstMenuData" :key="index" :offset="0">
-        <el-card :body-style="{ padding: '0px' }">
+        <el-card :body-style="{ padding: '0px' }" @click="goQueryData(menu)">
           <img src="./../../../static/img/img.jpg" class="image">
-          <div style="padding: 6px;">
+          <div style="padding: 10px;">
             <span>{{menu.name}}</span>
-            <div class="bottom clearfix">
-              <el-button type="text" class="button" :key="menu.id" @click="goQueryData(menu)">查看数据详情</el-button>
-              <!-- <router-link
-                :to="'/dashboard/datalistview/'+menu.id"
-                :key="menu.id"
-                class="button"
-              >查看数据详情</router-link>!-->
-            </div>
+            <el-button type="text" class="button" :key="menu.id" @click="goQueryData(menu)">查看数据详情</el-button>
           </div>
         </el-card>
       </el-col>
@@ -79,7 +72,7 @@ export default {
 }
 
 .button {
-  padding: 0;
+  padding: 5px 0;
   float: right;
 }
 

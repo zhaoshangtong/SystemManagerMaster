@@ -59,7 +59,6 @@ export default {
             this.ruleForm.username +
             "&pwd=21232F297A57A5A743894A0E4A801FC3";
           this.$axios.get(url).then(res => {
-            console.log("res:" + JSON.stringify(res.data));
             if (res.data.error == 0) {
               //登录成功
               let sid = res.data.results.sid;
@@ -73,7 +72,6 @@ export default {
             }
           });
         } else {
-          console.log("error submit!!");
           return false;
         }
       });

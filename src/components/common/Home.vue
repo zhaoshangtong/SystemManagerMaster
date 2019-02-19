@@ -24,8 +24,7 @@ export default {
   data() {
     return {
       tagsList: [],
-      collapse: false,
-      tableData: []
+      collapse: false
     };
   },
   components: {
@@ -45,12 +44,6 @@ export default {
         msg[i].name && arr.push(msg[i].name);
       }
       this.tagsList = arr;
-    });
-  },
-  mounted() {
-    //获取json数据中的泵站数据
-    this.$axios.get("./static/alldata.json").then(res => {
-      this.tableData = res.data;
     });
   }
 };

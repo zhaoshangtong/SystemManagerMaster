@@ -75,12 +75,6 @@ export default {
     }
   },
   watch: {
-    // 'model': {
-    // 	handler() {
-    // 		console.log('对象变化', this.model.isExpand)
-    // 	},
-    // 	deep: true
-    // }
   },
   methods: {
     getParentNode(m) {
@@ -100,15 +94,6 @@ export default {
     },
     deleteFunc(m) {
       this.$emit("deleteFunc", m);
-      // this.getParentNode(m)
-      // console.log(this.parentNodeModel)
-      // if (this.parentNodeModel.hasOwnProperty('children')) {
-      // 	console.log('父级是跟节点', this.parentNodeModel)
-      // 	this.parentNodeModel.children.splice(this.parentNodeModel.children.indexOf(m), 1)
-      // } else if (this.parentNodeModel instanceof Array) {
-      // 	console.log('跟节点', this.parentNodeModel)
-      // 	this.parentNodeModel.splice(this.parentNodeModel.indexOf(m), 1)
-      // }
     },
     actionFunc(m) {
       this.$emit("actionFunc", m);

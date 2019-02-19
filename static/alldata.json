@@ -1,13 +1,14 @@
-[{
+[
+    {
         "id": 1,
-        "parentId": 0,
         "name": "排水系统",
-        "children": [{
+        "children": [
+            {
                 "id": 11,
-                "parentId": 1,
                 "name": "160泵站",
                 "tableName": "160",
-                "params": [{
+                "params": [
+                    {
                         "name": "水仓液位（M）",
                         "tag": "OPCPS.STAT38",
                         "showReal": true,
@@ -22,18 +23,18 @@
                         "showEChars": true
                     }
                 ],
-                "children": [{
+                "children": [
+                    {
                         "id": 111,
-                        "parentId": 11,
                         "name": "1#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.M360",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.STAT18",
@@ -55,7 +56,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.1_AU",
@@ -67,16 +67,15 @@
                     },
                     {
                         "id": 112,
-                        "parentId": 11,
                         "name": "2#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.M361",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.STAT20",
@@ -98,7 +97,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.2_AU",
@@ -110,16 +108,15 @@
                     },
                     {
                         "id": 113,
-                        "parentId": 11,
                         "name": "3#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.M362",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.STAT22",
@@ -141,7 +138,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.3_AU",
@@ -153,16 +149,15 @@
                     },
                     {
                         "id": 114,
-                        "parentId": 11,
                         "name": "4#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.M363",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.STAT24",
@@ -184,7 +179,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.4_AU",
@@ -198,28 +192,29 @@
             },
             {
                 "id": 12,
-                "parentId": 1,
                 "name": "320泵站",
                 "tableName": "320",
-                "params": [{
-                    "name": "水仓液位（M）",
-                    "tag": "OPCPS.BC_YW",
-                    "showReal": true,
-                    "showHistory": true,
-                    "showEChars": true
-                }],
-                "children": [{
+                "params": [
+                    {
+                        "name": "水仓液位（M）",
+                        "tag": "OPCPS.BC_YW",
+                        "showReal": true,
+                        "showHistory": true,
+                        "showEChars": true
+                    }
+                ],
+                "children": [
+                    {
                         "id": 121,
-                        "parentId": 12,
                         "name": "1#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.1_B_GY_OK",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.1_B_DL",
@@ -234,7 +229,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.1_B_YC_AUTO",
@@ -246,16 +240,15 @@
                     },
                     {
                         "id": 122,
-                        "parentId": 12,
                         "name": "2#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.2_B_GY_OK",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.2_B_DL",
@@ -270,7 +263,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.2_b_YC_AUTO",
@@ -282,16 +274,15 @@
                     },
                     {
                         "id": 123,
-                        "parentId": 12,
                         "name": "3#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.3_B_GY_OK",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.3_B_DL",
@@ -306,7 +297,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.3_B_YC_AUTO",
@@ -318,16 +308,15 @@
                     },
                     {
                         "id": 124,
-                        "parentId": 12,
                         "name": "4#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.4_B_GY_OK",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.4_B_DL",
@@ -342,7 +331,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.4_B_YC_AUTO",
@@ -356,28 +344,29 @@
             },
             {
                 "id": 13,
-                "parentId": 1,
                 "name": "470泵站",
                 "tableName": "470",
-                "params": [{
-                    "name": "水仓液位（M）",
-                    "tag": "OPCPS.bc_yw_4",
-                    "showReal": true,
-                    "showHistory": true,
-                    "showEChars": true
-                }],
-                "children": [{
+                "params": [
+                    {
+                        "name": "水仓液位（M）",
+                        "tag": "OPCPS.bc_yw_4",
+                        "showReal": true,
+                        "showHistory": true,
+                        "showEChars": true
+                    }
+                ],
+                "children": [
+                    {
                         "id": 131,
-                        "parentId": 13,
                         "name": "1#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.1_b_gy_ok_4",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.1_b_dl_4",
@@ -392,7 +381,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.1_b_yc_auto_4",
@@ -404,16 +392,15 @@
                     },
                     {
                         "id": 132,
-                        "parentId": 13,
                         "name": "2#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.2_b_gy_ok_4",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.2_b_dl_4",
@@ -428,7 +415,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.2_b_yc_auto_4",
@@ -440,16 +426,15 @@
                     },
                     {
                         "id": 133,
-                        "parentId": 13,
                         "name": "3#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.3_b_gy_ok",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.3_b_dl_4",
@@ -464,7 +449,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.3_b_yc_auto_4",
@@ -476,16 +460,15 @@
                     },
                     {
                         "id": 134,
-                        "parentId": 13,
                         "name": "4#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.4_b_gy_ok_4",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.4_b_dl_4",
@@ -500,7 +483,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.4_b_yc_auto_4",
@@ -512,16 +494,15 @@
                     },
                     {
                         "id": 135,
-                        "parentId": 13,
                         "name": "5#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "未就绪/就绪",
                                 "tag": "OPCPS.5_b_gy_ok_4",
                                 "showReal": true,
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.5_b_dl_4",
@@ -536,7 +517,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.5_b_yc_auto_4",
@@ -550,21 +530,23 @@
             },
             {
                 "id": 14,
-                "parentId": 1,
                 "name": "970泵站",
                 "tableName": "970",
-                "params": [{
-                    "name": "水仓液位（M）",
-                    "tag": "OPCPS.bc_yw_9",
-                    "showReal": true,
-                    "showHistory": true,
-                    "showEChars": true
-                }],
-                "children": [{
+                "params": [
+                    {
+                        "name": "水仓液位（M）",
+                        "tag": "OPCPS.bc_yw_9",
+                        "showReal": true,
+                        "showHistory": true,
+                        "showEChars": true
+                    }
+                ],
+                "children": [
+                    {
                         "id": 141,
-                        "parentId": 14,
                         "name": "1#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "前轴温度",
                                 "tag": "OPCPS.1_b_qwd",
                                 "showReal": true,
@@ -585,7 +567,6 @@
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.1_b_dl_9",
@@ -600,7 +581,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.1_b_yc_auto_9",
@@ -612,9 +592,9 @@
                     },
                     {
                         "id": 142,
-                        "parentId": 14,
                         "name": "2#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "前轴温度",
                                 "tag": "OPCPS.2_b_qwd",
                                 "showReal": true,
@@ -635,7 +615,6 @@
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.2_b_dl_9",
@@ -650,7 +629,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.2_b_yc_auto_9",
@@ -662,9 +640,9 @@
                     },
                     {
                         "id": 143,
-                        "parentId": 14,
                         "name": "3#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "前轴温度",
                                 "tag": "OPCPS.3_b_qwd",
                                 "showReal": true,
@@ -685,7 +663,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.3_b_dl_9",
@@ -700,7 +677,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.3_b_yc_auto_9",
@@ -712,9 +688,9 @@
                     },
                     {
                         "id": 144,
-                        "parentId": 14,
                         "name": "4#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "前轴温度",
                                 "tag": "OPCPS.4_b_qwd",
                                 "showReal": true,
@@ -735,7 +711,6 @@
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.4_b_dl_9",
@@ -750,7 +725,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.4_b_yc_auto_9",
@@ -762,9 +736,9 @@
                     },
                     {
                         "id": 145,
-                        "parentId": 14,
                         "name": "5#泵",
-                        "params": [{
+                        "params": [
+                            {
                                 "name": "前轴温度",
                                 "tag": "OPCPS.5_b_qwd",
                                 "showReal": true,
@@ -785,7 +759,6 @@
                                 "showHistory": true,
                                 "showEChars": false
                             },
-
                             {
                                 "name": "电流A（A）",
                                 "tag": "OPCPS.5_b_dl_9",
@@ -800,7 +773,6 @@
                                 "showHistory": true,
                                 "showEChars": true
                             },
-
                             {
                                 "name": "手动/自动",
                                 "tag": "OPCPS.5_b_yc_auto_9",
@@ -816,14 +788,14 @@
     },
     {
         "id": 2,
-        "parentId": 0,
         "name": "提升机",
-        "children": [{
+        "children": [
+            {
                 "id": 21,
-                "parentId": 2,
                 "name": "主画面信息",
                 "tableName": "tsmain",
-                "params": [{
+                "params": [
+                    {
                         "name": "闸给定输出",
                         "tag": "OPCTS.A14",
                         "showReal": true,
@@ -957,18 +929,20 @@
                         "showEChars": false
                     }
                 ]
-            }, {
+            },
+            {
                 "id": 22,
-                "parentId": 2,
                 "name": "温度检测",
                 "tableName": "tswdjc",
-                "params": [{
+                "params": [
+                    {
                         "name": "电机温度1",
                         "tag": "OPCTS.DJ1",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "电机温度2",
                         "tag": "OPCTS.DJ2",
                         "showReal": true,
@@ -981,7 +955,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "电机温度4",
                         "tag": "OPCTS.DJ4",
                         "showReal": true,
@@ -994,7 +969,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "电机温度6",
                         "tag": "OPCTS.DJ6",
                         "showReal": true,
@@ -1007,7 +983,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "导向轮1-2",
                         "tag": "OPCTS.DXL2",
                         "showReal": true,
@@ -1020,7 +997,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "导向轮2-2",
                         "tag": "OPCTS.DXL4",
                         "showReal": true,
@@ -1033,7 +1011,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "滚筒轴承1-2",
                         "tag": "OPCTS.GT2",
                         "showReal": true,
@@ -1046,7 +1025,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "滚筒轴承2-2",
                         "tag": "OPCTS.GT4",
                         "showReal": true,
@@ -1059,7 +1039,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": true
-                    }, {
+                    },
+                    {
                         "name": "油压站2温度",
                         "tag": "OPCTS.WenduJS2",
                         "showReal": true,
@@ -1070,16 +1051,17 @@
             },
             {
                 "id": 23,
-                "parentId": 2,
                 "name": "闸瓦检测",
                 "tableName": "tszwjc",
-                "params": [{
+                "params": [
+                    {
                         "name": "1-1状态",
                         "tag": "OPCTS.JX1-1",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "1-2状态",
                         "tag": "OPCTS.JX1-2",
                         "showReal": true,
@@ -1092,7 +1074,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "10-2状态",
                         "tag": "OPCTS.JX10-2",
                         "showReal": true,
@@ -1105,7 +1088,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "11-2状态",
                         "tag": "OPCTS.JX11-2",
                         "showReal": true,
@@ -1118,7 +1102,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "12-2状态",
                         "tag": "OPCTS.JX12-2",
                         "showReal": true,
@@ -1131,7 +1116,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "2-2状态",
                         "tag": "OPCTS.JX2-2",
                         "showReal": true,
@@ -1144,7 +1130,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "3-2状态",
                         "tag": "OPCTS.JX3-2",
                         "showReal": true,
@@ -1157,7 +1144,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "4-2状态",
                         "tag": "OPCTS.JX4-2",
                         "showReal": true,
@@ -1170,7 +1158,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "5-2状态",
                         "tag": "OPCTS.JX5-2",
                         "showReal": true,
@@ -1183,7 +1172,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "6-2状态",
                         "tag": "OPCTS.JX6-2",
                         "showReal": true,
@@ -1196,7 +1186,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "7-2状态",
                         "tag": "OPCTS.JX7-2",
                         "showReal": true,
@@ -1209,7 +1200,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "8-2状态",
                         "tag": "OPCTS.JX8-2",
                         "showReal": true,
@@ -1222,7 +1214,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "9-2状态",
                         "tag": "OPCTS.JX9-2",
                         "showReal": true,
@@ -1230,18 +1223,20 @@
                         "showEChars": false
                     }
                 ]
-            }, {
+            },
+            {
                 "id": 24,
-                "parentId": 2,
                 "name": "开车方式",
                 "tableName": "tskcfs",
-                "params": [{
+                "params": [
+                    {
                         "name": "半自动方式",
                         "tag": "OPCTS.A102",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "检修方式",
                         "tag": "OPCTS.A104",
                         "showReal": true,
@@ -1254,7 +1249,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "手动方式",
                         "tag": "OPCTS.A103",
                         "showReal": true,
@@ -1272,10 +1268,10 @@
             },
             {
                 "id": 25,
-                "parentId": 2,
                 "name": "准备运行",
                 "tableName": "tszbyx",
-                "params": [{
+                "params": [
+                    {
                         "name": "高压合闸",
                         "tag": "OPCTS.A84",
                         "showReal": true,
@@ -1288,7 +1284,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置风机运行",
                         "tag": "OPCTS.A70",
                         "showReal": true,
@@ -1306,10 +1303,10 @@
             },
             {
                 "id": 25,
-                "parentId": 2,
                 "name": "安全保护",
                 "tableName": "tsaqbh",
-                "params": [{
+                "params": [
+                    {
                         "name": "软件安全回路1",
                         "tag": "OPCTS.A39",
                         "showReal": true,
@@ -1336,7 +1333,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "轻故障",
                         "tag": "OPCTS.A26",
                         "showReal": true,
@@ -1344,12 +1342,13 @@
                         "showEChars": false
                     }
                 ]
-            }, {
+            },
+            {
                 "id": 26,
-                "parentId": 2,
                 "name": "故障报警",
                 "tableName": "tsgzbj",
-                "params": [{
+                "params": [
+                    {
                         "name": "残压高",
                         "tag": "OPCTS.A48",
                         "showReal": true,
@@ -1362,7 +1361,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "导向编码器故障",
                         "tag": "OPCTS.A52",
                         "showReal": true,
@@ -1375,7 +1375,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "等速段超速",
                         "tag": "OPCTS.A57",
                         "showReal": true,
@@ -1388,19 +1389,22 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "电机温度高",
                         "tag": "OPCTS.A30",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "电流不平衡",
                         "tag": "OPCTS.A64",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "电枢接地",
                         "tag": "OPCTS.A33",
                         "showReal": true,
@@ -1413,19 +1417,22 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "额定电流",
                         "tag": "OPCTS.A3",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "额定油压给定电压",
                         "tag": "OPCTS.A1",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "反馈编码器故障",
                         "tag": "OPCTS.A54",
                         "showReal": true,
@@ -1438,7 +1445,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "滚筒轴承超温",
                         "tag": "OPCTS.A32",
                         "showReal": true,
@@ -1451,19 +1459,22 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "监控编码器故障",
                         "tag": "OPCTS.S6",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "欠磁",
                         "tag": "OPCTS.A55",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "监控上过卷",
                         "tag": "OPCTS.S9",
                         "showReal": true,
@@ -1476,7 +1487,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "减速段超速",
                         "tag": "OPCTS.A50",
                         "showReal": true,
@@ -1489,7 +1501,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "摩擦编码器故障",
                         "tag": "OPCTS.A53",
                         "showReal": true,
@@ -1502,7 +1515,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "上过卷综合",
                         "tag": "OPCTS.A67",
                         "showReal": true,
@@ -1529,7 +1543,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "液压站故障",
                         "tag": "OPCTS.A63",
                         "showReal": true,
@@ -1542,7 +1557,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "油压低",
                         "tag": "OPCTS.A49",
                         "showReal": true,
@@ -1555,7 +1571,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "闸间隙超限",
                         "tag": "OPCTS.A25",
                         "showReal": true,
@@ -1568,7 +1585,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "制动手柄松闸",
                         "tag": "OPCTS.A132",
                         "showReal": true,
@@ -1581,7 +1599,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "主变过温",
                         "tag": "OPCTS.A36",
                         "showReal": true,
@@ -1594,7 +1613,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置通讯故障",
                         "tag": "OPCTS.A45",
                         "showReal": true,
@@ -1607,7 +1627,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "风机变频故障",
                         "tag": "OPCTS.A27",
                         "showReal": true,
@@ -1620,19 +1641,22 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置故障",
                         "tag": "OPCTS.A61",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置故障1#",
                         "tag": "OPCTS.A44",
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置故障2#",
                         "tag": "OPCTS.A43",
                         "showReal": true,
@@ -1650,10 +1674,10 @@
             },
             {
                 "id": 27,
-                "parentId": 2,
                 "name": "电源指示",
                 "tableName": "tsdyzs",
-                "params": [{
+                "params": [
+                    {
                         "name": "AC110V电源",
                         "tag": "OPCTS.A75",
                         "showReal": true,
@@ -1666,7 +1690,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "柜24V电源",
                         "tag": "OPCTS.A69",
                         "showReal": true,
@@ -1679,7 +1704,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "台24V电源",
                         "tag": "OPCTS.A82",
                         "showReal": true,
@@ -1692,7 +1718,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "快开合闸电源",
                         "tag": "OPCTS.A73",
                         "showReal": true,
@@ -1705,7 +1732,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置风机电源",
                         "tag": "OPCTS.A78",
                         "showReal": true,
@@ -1720,12 +1748,13 @@
                         "showEChars": false
                     }
                 ]
-            }, {
+            },
+            {
                 "id": 28,
-                "parentId": 2,
                 "name": "运行状况",
                 "tableName": "tsyxzk",
-                "params": [{
+                "params": [
+                    {
                         "name": "半速运行",
                         "tag": "OPCTS.A99",
                         "showReal": true,
@@ -1760,7 +1789,6 @@
                         "showHistory": true,
                         "showEChars": false
                     },
-
                     {
                         "name": "绞车闭锁",
                         "tag": "OPCTS.A91",
@@ -1786,10 +1814,10 @@
             },
             {
                 "id": 29,
-                "parentId": 2,
                 "name": "装置信息状况",
                 "tableName": "tszzxx",
-                "params": [{
+                "params": [
+                    {
                         "name": "装置故障",
                         "tag": "OPCTS.A61",
                         "showReal": true,
@@ -1802,7 +1830,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置故障2#",
                         "tag": "OPCTS.A43",
                         "showReal": true,
@@ -1815,7 +1844,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置速度",
                         "tag": "OPCTS.A20",
                         "showReal": true,
@@ -1828,7 +1858,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置速度_2#",
                         "tag": "OPCTS.A6",
                         "showReal": true,
@@ -1841,7 +1872,8 @@
                         "showReal": true,
                         "showHistory": true,
                         "showEChars": false
-                    }, {
+                    },
+                    {
                         "name": "装置允许运行",
                         "tag": "OPCTS.A143",
                         "showReal": true,

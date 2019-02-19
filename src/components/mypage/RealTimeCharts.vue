@@ -15,6 +15,7 @@ import querydata from "../../../static/querydata.json";
 export default {
   data() {
     return {
+      maxPoint: 100,
       interval: 0,
       tags: this.$route.query.tags,
       itemId: this.$route.query.itemId,
@@ -99,6 +100,8 @@ export default {
         .params.filter(p => p.showEChars);
       for (var i = 0; i < result.length; i++) {
         var tag = result[i].name;
+        var time = result[i].time;
+        var value = result[i].value;
         var nameParam = params.filter(o => o.tag == tag)[0];
         var name = "";
         if (nameParam != undefined) {
@@ -106,32 +109,29 @@ export default {
         } else {
           continue;
         }
-        var time = result[i].time;
-        var value = result[i].value;
-        var series1 = this.option.series.filter(o => o.name == tag)[0];
-        if (this.option.legend.data.indexOf(tag) == -1) {
-          this.option.legend.data.push(tag);
-        }
-        if (this.option.xAxis.data.length > 5) {
-          this.option.xAxis.data.shift();
-          this.option.xAxis.data.push(time);
-        } else {
-          this.option.xAxis.data.push(time);
+
+        if (this.option.legend.data.indexOf(name) == -1) {
+          this.option.legend.data.push(name);
         }
 
-        if (series1 == undefined) {
-          this.option.series.push({
-            name: tag,
+        var series = this.option.series.filter(o => o.name == name)[0];
+        if (series == undefined) {
+          series = {
+            name: name,
             type: "line",
-            data: [value]
-          });
+            smooth: true,
+            data: []
+          };
+          this.option.series.push(series);
         } else {
-          if (series1.data.length > 5) {
-            series1.data.shift();
-            series1.data.push(value);
-          } else {
-            series1.data.push(value);
+          if (series.data.length > this.maxPoint) {
+            series.data.shift();
           }
+        }
+        series.data.push(value);
+
+        if (time.indexOf("1970-01-01") == -1 && this.option.xAxis.data.indexOf(time) == -1) {
+          this.option.xAxis.data.push(time);
         }
       }
       let myChart = this.$echarts.init(document.getElementById("myChart"));
@@ -204,8 +204,6 @@ export default {
           sid +
           "&tag=" +
           this.tags;
-
-        console.log(this.tags, url);
         //let postdata = { sid: sid, tag: this.tags };
         //获取json数据中的泵站数据
         this.$axios.post(url).then(res => {
@@ -221,5 +219,3 @@ export default {
   }
 };
 </script>
-<style>
-</style>

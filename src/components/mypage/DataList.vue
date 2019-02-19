@@ -33,9 +33,7 @@ export default {
       return this.datalist.filter(p => p.id == this.id)[0].children;
     }
   },
-  mounted() {
-    console.log("id:" + this.id);
-  },
+  mounted() {},
   watch: {
     $route() {
       if (this.$route.path == "/datalistview") {
@@ -54,14 +52,17 @@ export default {
       alert(val);
     },
     actionFunc(m) {
-      let children = datalistdata.filter(p => p.id == this.id)[0].children;
+      var childName = "";
+      var children = datalistdata.filter(p => p.id == this.id)[0].children;
       if (m.id > 100) {
         var parentId = String(m.id).substring(0, 2);
-        children = children.filter(o => o.id == parentId)[0].children;
+        var parent = children.filter(o => o.id == parentId)[0];
+        children = parent.children;
+        childName += parent.name + "-";
       }
       let child = children.filter(o => o.id == m.id)[0];
       let _params = child.params;
-      let childName = child.name;
+      childName += child.name;
       let tags = _params
         .filter(p => p.showReal)
         .map(function(a) {
@@ -69,9 +70,8 @@ export default {
         })
         .join("|");
       let itemId = m.id;
-      this.$router.push({
+      let routeUrl = this.$router.resolve({
         path: "/realtime/",
-        name: "realtimedata",
         query: {
           itemId: itemId,
           tags: tags,
@@ -79,21 +79,25 @@ export default {
           childName: childName
         }
       });
+      window.open(routeUrl.href, "_blank");
     },
     deleteFunc(m) {
-      let children = datalistdata.filter(p => p.id == this.id)[0].children;
+      var childName = "";
       let tableName = "";
+      let children = datalistdata.filter(p => p.id == this.id)[0].children;
       if (m.id > 100) {
         var parentId = String(m.id).substring(0, 2);
-        tableName = children.filter(o => o.id == parentId)[0].tableName;
-        children = children.filter(o => o.id == parentId)[0].children;
+        var parent = children.filter(o => o.id == parentId)[0];
+        children = parent.children;
+        childName += parent.name + "-";
+        tableName = parent.tableName;
       }
       if (m.id > 10 && m.id < 100) {
         tableName = children.filter(o => o.id == m.id)[0].tableName;
       }
       let child = children.filter(o => o.id == m.id)[0];
       let _params = child.params;
-      let childName = child.name;
+      childName += child.name;
       let tags = _params
         .filter(p => p.showHistory)
         .map(function(a) {
@@ -101,9 +105,8 @@ export default {
         })
         .join("|");
       let itemId = m.id;
-      this.$router.push({
+      let routeUrl = this.$router.resolve({
         path: "/historydata/",
-        name: "historydata",
         query: {
           itemId: itemId,
           tags: tags,
@@ -112,9 +115,9 @@ export default {
           childName: childName
         }
       });
+      window.open(routeUrl.href, "_blank");
     },
     handlerExpand(m) {
-      console.log("展开/收缩");
       m.isExpand = !m.isExpand;
     }
   }

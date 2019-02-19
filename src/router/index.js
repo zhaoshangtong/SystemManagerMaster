@@ -109,22 +109,6 @@ export default new Router({
                     },
                 },
                 {
-                    path: '/realtime/', //:id/:itemId/:tags
-                    name: 'realtimedata',
-                    component: resolve => require(['../components/mypage/RealTimeData.vue'], resolve),
-                    meta: {
-                        title: '实时数据'
-                    }
-                },
-                {
-                    path: '/historydata', //:id/:itemId/:tags
-                    name: 'historydata',
-                    component: resolve => require(['../components/mypage/HistoryData.vue'], resolve),
-                    meta: {
-                        title: '历史数据'
-                    }
-                },
-                {
                     path: '/warningset', //:id/:itemId/:tags
                     name: 'warningset',
                     component: resolve => require(['../components/mypage/WarningSet.vue'], resolve),
@@ -153,6 +137,14 @@ export default new Router({
         {
             path: '/login',
             component: resolve => require(['../components/page/Login.vue'], resolve)
+        },
+        {
+            path: '/realtime', //:id/:itemId/:tags
+            component: resolve => require(['../components/mypage/RealTimeData.vue'], resolve)
+        },
+        {
+            path: '/historydata', //:id/:itemId/:tags
+            component: resolve => require(['../components/mypage/HistoryData.vue'], resolve)
         },
         {
             path: '*',
