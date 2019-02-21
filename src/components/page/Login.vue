@@ -54,8 +54,7 @@ export default {
         if (valid) {
           //获取sid
           var url =
-            this.$HttpApi +
-            "login?user=" +
+            "http://zxc.vipgz1.idcfengye.com/webapi/login?user=" +
             this.ruleForm.username +
             "&pwd=21232F297A57A5A743894A0E4A801FC3";
           this.$axios.get(url).then(res => {

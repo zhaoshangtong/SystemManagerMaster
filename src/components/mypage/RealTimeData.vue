@@ -106,8 +106,7 @@ export default {
         //小于2s时
         //重新登陆
         var login_url =
-          this.$HttpApi +
-          "login?user=admin" +
+          "http://zxc.vipgz1.idcfengye.com/webapi/login?user=admin" +
           "&pwd=21232F297A57A5A743894A0E4A801FC3";
         this.$axios.get(login_url).then(res => {
           if (res.data.error == 0) {

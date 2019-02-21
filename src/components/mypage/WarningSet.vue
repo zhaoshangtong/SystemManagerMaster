@@ -170,10 +170,13 @@ export default {
         type = 1;
       }
       this.$axios
-        .post("http://localhost:8000/api/Warning/GetWarningSetData", {
-          pageIndex: this.cur_page,
-          type: type
-        })
+        .post(
+          "http://zxc02.vipgz1.idcfengye.com/api/Warning/GetWarningSetData",
+          {
+            pageIndex: this.cur_page,
+            type: type
+          }
+        )
         .then(res => {
           if (!!res.data) {
             this.loading = false;
@@ -258,7 +261,10 @@ export default {
         data.up2_value = -1.123456;
       }
       this.$axios
-        .post("http://localhost:8000/api/Warning/EditWarningSet", data)
+        .post(
+          "http://zxc02.vipgz1.idcfengye.com/api/Warning/EditWarningSet",
+          data
+        )
         .then(res => {
           var isSuccess = res.data;
           if (isSuccess) {
@@ -271,7 +277,10 @@ export default {
     deleteRow() {
       this.tableData.splice(this.idx, 1);
       this.$axios
-        .post("http://localhost:8000/api/Warning/DelWarningSet?id=" + this.id)
+        .post(
+          "http://zxc02.vipgz1.idcfengye.com/api/Warning/DelWarningSet?id=" +
+            this.id
+        )
         .then(res => {
           var isSuccess = res.data;
           if (isSuccess) {

@@ -16,7 +16,7 @@
 							<td>
 								<tree-item
 									v-for="(model,i) in treeDataSource"
-                                    :key="'root_node_'+i"
+                  :key="'root_node_'+i"
 									:root="0"
 									:num="i"
 									@actionFunc="actionFunc"

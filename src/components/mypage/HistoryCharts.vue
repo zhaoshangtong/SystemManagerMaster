@@ -6,7 +6,7 @@
         <el-date-picker type="date" placeholder="选择日期" v-model="end_date"></el-date-picker>
         <el-button type="primary" icon="search" @click="search">搜索</el-button>
       </div>
-      <div id="myChart" :style="{width:'100%',height:'800px'}" v-loading="loading"></div>
+      <div id="myChart" :style="{width:'100%',height:'500px',overflow:'auto'}" v-loading="loading"></div>
     </div>
     <div v-show="IsShowMessage">没有需要用图表展示的tag~</div>
   </div>
@@ -24,7 +24,7 @@ export default {
       start_date: "",
       end_date: "",
       cur_page: 1,
-      loading:false,
+      loading: false,
       IsShowMessage: false,
       option: {
         title: {
@@ -38,8 +38,8 @@ export default {
         },
         grid: {
           left: "3%",
-          right: "4%",
-          bottom: "3%",
+          right: "3%",
+          bottom: "5%",
           containLabel: true
         },
         toolbox: {
@@ -98,7 +98,7 @@ export default {
       this.getData();
     },
     getData() {
-      this.loading=true;
+      this.loading = true;
       this.datas = [];
       let start = this.start_date;
       let end = this.end_date;
@@ -106,7 +106,7 @@ export default {
       let tags = this.tags; //"A001|A002"
       let tableName = this.tableName;
       let pageSize = 100;
-      var url = "http://localhost:8000/api/History/GetHistoryData";
+      var url = "http://zxc02.vipgz1.idcfengye.com/api/History/GetHistoryData";
       var postdata = {
         startDate: start,
         endDate: end,
@@ -175,7 +175,7 @@ export default {
       }
       let myChart = this.$echarts.init(document.getElementById("myChart"));
       myChart.setOption(this.option);
-      this.loading=false;
+      this.loading = false;
     }
   }
 };

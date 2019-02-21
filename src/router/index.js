@@ -108,6 +108,7 @@ export default new Router({
                         title: '查看数据'
                     },
                 },
+
                 {
                     path: '/warningset', //:id/:itemId/:tags
                     name: 'warningset',
@@ -132,20 +133,28 @@ export default new Router({
                         title: '历史报警'
                     }
                 },
+                {
+                    path: '/realtime', //:id/:itemId/:tags
+                    name: 'realtime',
+                    component: resolve => require(['../components/mypage/RealTimeData.vue'], resolve),
+                    meta: {
+                        title: '实时数据'
+                    }
+                }, {
+                    path: '/historydata', //:id/:itemId/:tags
+                    name: 'historydata',
+                    component: resolve => require(['../components/mypage/HistoryData.vue'], resolve),
+                    meta: {
+                        title: '历史数据'
+                    }
+                },
             ]
         },
         {
             path: '/login',
             component: resolve => require(['../components/page/Login.vue'], resolve)
         },
-        {
-            path: '/realtime', //:id/:itemId/:tags
-            component: resolve => require(['../components/mypage/RealTimeData.vue'], resolve)
-        },
-        {
-            path: '/historydata', //:id/:itemId/:tags
-            component: resolve => require(['../components/mypage/HistoryData.vue'], resolve)
-        },
+
         {
             path: '*',
             redirect: '/404'

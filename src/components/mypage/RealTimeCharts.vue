@@ -3,7 +3,7 @@
     <div
       id="myChart"
       v-show="!IsShowMessage"
-      :style="{width:'100%',height:'800px'}"
+      :style="{width:'100%',height:'540px',overflow:'auto'}"
       v-loading="loading"
     ></div>
     <div v-show="IsShowMessage">没有需要用图表展示的tag~</div>
@@ -34,8 +34,8 @@ export default {
         },
         grid: {
           left: "3%",
-          right: "4%",
-          bottom: "3%",
+          right: "3%",
+          bottom: "5%",
           containLabel: true
         },
         toolbox: {
@@ -67,6 +67,17 @@ export default {
     }
   },
   methods: {
+    formatDate(date) {
+      var y = date.getFullYear();
+      var m = date.getMonth() + 1;
+      m = m < 10 ? "0" + m : m;
+      var d = date.getDate();
+      d = d < 10 ? "0" + d : d;
+      var h = date.getHours();
+      var mm = date.getMinutes();
+      var s = date.getSeconds();
+      return y + "-" + m + "-" + d + " " + h + ":" + mm + ":" + s;
+    },
     getData1() {
       var result = querydata.results;
       this.getOption(result);
@@ -129,9 +140,18 @@ export default {
           }
         }
         series.data.push(value);
-
-        if (time.indexOf("1970-01-01") == -1 && this.option.xAxis.data.indexOf(time) == -1) {
-          this.option.xAxis.data.push(time);
+        if (time.indexOf("1970-01-01") == -1) {
+          time = this.formatDate(new Date());
+        }
+        if (
+          time.indexOf("1970-01-01") == -1 &&
+          this.option.xAxis.data.indexOf(time) == -1
+        ) {
+          if (this.option.xAxis.data.length > this.maxPoint) {
+            this.option.xAxis.data.shift();
+          } else {
+            this.option.xAxis.data.push(time);
+          }
         }
       }
       let myChart = this.$echarts.init(document.getElementById("myChart"));
@@ -160,8 +180,7 @@ export default {
         //小于2s时
         //重新登陆
         var login_url =
-          this.$HttpApi +
-          "login?user=admin" +
+          "http://zxc.vipgz1.idcfengye.com/webapi/login?user=admin" +
           "&pwd=21232F297A57A5A743894A0E4A801FC3";
         this.$axios.get(login_url).then(res => {
           if (res.data.error == 0) {
@@ -219,3 +238,6 @@ export default {
   }
 };
 </script>
+<style>
+@import "../../../static/css/main.css";
+</style>

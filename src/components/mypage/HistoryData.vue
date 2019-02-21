@@ -7,24 +7,26 @@
           <el-date-picker type="date" placeholder="选择日期" v-model="end_date"></el-date-picker>
           <el-button type="primary" icon="search" @click="search">搜索</el-button>
         </div>
+        <div :style="{overflow:'hidden'}">
+          <el-table
+            :data="datas"
+            border
+            stripe
+            v-loading="loading"
+            class="table"
+            ref="multipleTable"
+            @selection-change="handleSelectionChange"
+          >
+            <el-table-column
+              v-for="(item,index) in ColunmsData"
+              :key="index"
+              :prop="item.tag"
+              :label="item.name"
+              align="center"
+            ></el-table-column>
+          </el-table>
+        </div>
 
-        <el-table
-          :data="datas"
-          border
-          stripe
-          v-loading="loading"
-          class="table"
-          ref="multipleTable"
-          @selection-change="handleSelectionChange"
-        >
-          <el-table-column
-            v-for="(item,index) in ColunmsData"
-            :key="index"
-            :prop="item.tag"
-            :label="item.name"
-            align="center"
-          ></el-table-column>
-        </el-table>
         <div class="pagination">
           <el-pagination
             background
@@ -79,7 +81,7 @@ export default {
       let pageIndex = this.cur_page;
       let tags = this.tags; //"A001|A002"
       let tableName = this.tableName;
-      var url = "http://localhost:8000/api/History/GetHistoryData";
+      var url = "http://zxc02.vipgz1.idcfengye.com/api/History/GetHistoryData";
       var postdata = {
         startDate: start,
         endDate: end,

@@ -70,8 +70,9 @@ export default {
         })
         .join("|");
       let itemId = m.id;
-      let routeUrl = this.$router.resolve({
-        path: "/realtime/",
+      //resolve
+      let routeUrl = this.$router.push({
+        path: "/realtime",
         query: {
           itemId: itemId,
           tags: tags,
@@ -79,7 +80,7 @@ export default {
           childName: childName
         }
       });
-      window.open(routeUrl.href, "_blank");
+      // window.open(routeUrl.href, "_blank");
     },
     deleteFunc(m) {
       var childName = "";
@@ -105,8 +106,9 @@ export default {
         })
         .join("|");
       let itemId = m.id;
-      let routeUrl = this.$router.resolve({
-        path: "/historydata/",
+      //resolve
+      let routeUrl = this.$router.push({
+        path: "/historydata",
         query: {
           itemId: itemId,
           tags: tags,
@@ -115,7 +117,7 @@ export default {
           childName: childName
         }
       });
-      window.open(routeUrl.href, "_blank");
+      // window.open(routeUrl.href, "_blank");
     },
     handlerExpand(m) {
       m.isExpand = !m.isExpand;

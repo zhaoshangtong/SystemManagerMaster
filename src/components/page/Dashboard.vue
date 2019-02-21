@@ -3,7 +3,7 @@
     <el-row :gutter="20">
       <el-col :span="elColSpan" v-for="(menu, index) in firstMenuData" :key="index" :offset="0">
         <el-card :body-style="{ padding: '0px' }" @click="goQueryData(menu)">
-          <img src="./../../../static/img/img.jpg" class="image">
+          <img :src="menu.img" class="image">
           <div style="padding: 10px;">
             <span>{{menu.name}}</span>
             <el-button type="text" class="button" :key="menu.id" @click="goQueryData(menu)">查看数据详情</el-button>

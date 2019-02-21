@@ -107,7 +107,7 @@ export default {
     },
     async getAllSBei() {
       this.selectSBei = await this.$axios
-        .get("http://localhost:8000/api/Warning/GetAllSBei")
+        .get("http://zxc02.vipgz1.idcfengye.com/api/Warning/GetAllSBei")
         .then(res => {
           var result = res.data;
           if (!!result) {
@@ -135,7 +135,7 @@ export default {
     },
     async getAllWarnSet() {
       this.allWarnTags = await this.$axios
-        .get("http://localhost:8000/api/Warning/GetAllWarningTags")
+        .get("http://zxc02.vipgz1.idcfengye.com/api/Warning/GetAllWarningTags")
         .then(res => {
           var result = res.data;
           if (!!result) {
@@ -157,7 +157,8 @@ export default {
       let up2_value = sData.up2_value;
       let tableName = this.tableName;
       let tag = sData.tag;
-      var url = "http://localhost:8000/api/Warning/GetHistoryWarningData";
+      var url =
+        "http://zxc02.vipgz1.idcfengye.com/api/Warning/GetHistoryWarningData";
       var postdata = {
         startDate: start,
         endDate: end,
