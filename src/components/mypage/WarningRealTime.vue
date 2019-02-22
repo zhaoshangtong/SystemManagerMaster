@@ -88,7 +88,7 @@ export default {
         type = 2;
       }
       this.$axios
-        .get("http://localhost:8000/api/Warning/GetWarnTagByType?type=" + type)
+        .get("http://zxc02.vipgz1.idcfengye.com/api/Warning/GetWarnTagByType?type=" + type)
         .then(res => {
           var result = res.data;
           if (!!result) {
