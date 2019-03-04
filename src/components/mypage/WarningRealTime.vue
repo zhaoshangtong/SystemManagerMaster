@@ -23,6 +23,12 @@
       <el-table :data="datas" :show-header="false" style="width: 100%" v-loading="loading">
         <el-table-column>
           <template slot-scope="scope">
+            <span class="message-title">{{scope.row.sbei}}</span>
+          </template>
+        </el-table-column>
+
+        <el-table-column>
+          <template slot-scope="scope">
             <span class="message-title">{{scope.row.name}}</span>
           </template>
         </el-table-column>
@@ -87,8 +93,12 @@ export default {
       } else {
         type = 2;
       }
+      //zxc02.vipgz1.idcfengye.com
       this.$axios
-        .get("http://zxc02.vipgz1.idcfengye.com/api/Warning/GetWarnTagByType?type=" + type)
+        .get(
+          "http://zxc02.vipgz1.idcfengye.com/api/Warning/GetWarnTagByType?type=" +
+            type
+        )
         .then(res => {
           var result = res.data;
           if (!!result) {
@@ -142,6 +152,8 @@ export default {
           var value = result[i].value;
           var names = params.filter(o => o.tag == tag);
           var name = "";
+          var sbei = "";
+          var sbei_child = "";
           var down_value = NaN;
           var down2_value = NaN;
           var up_value = NaN;
@@ -149,6 +161,11 @@ export default {
           var msg = ""; //报错信息
           if (names.length > 0) {
             name = names[0].name;
+            sbei = names[0].sbei;
+            sbei_child = names[0].sbei_child;
+            if (!sbei_child) {
+              sbei_child = "";
+            }
             down_value = names[0].down_value;
             if (down_value != -1.123456 && value < down_value) {
               msg = "当前已低于报警下限值:" + down_value;
@@ -167,7 +184,8 @@ export default {
             }
           }
           if (name != "" && msg != "") {
-            this.datas.push({ name, tag, time, value, msg });
+            sbei = sbei + sbei_child;
+            this.datas.push({ sbei, name, tag, time, value, msg });
           }
         }
       });

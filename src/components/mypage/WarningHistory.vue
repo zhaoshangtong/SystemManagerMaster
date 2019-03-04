@@ -157,8 +157,7 @@ export default {
       let up2_value = sData.up2_value;
       let tableName = this.tableName;
       let tag = sData.tag;
-      var url =
-        "http://zxc02.vipgz1.idcfengye.com/api/Warning/GetHistoryWarningData";
+      var url = "http://zxc02.vipgz1.idcfengye.com/api/Warning/GetHistoryWarningData";
       var postdata = {
         startDate: start,
         endDate: end,

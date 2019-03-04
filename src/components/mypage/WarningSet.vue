@@ -203,6 +203,7 @@ export default {
       });
     },
     search() {
+      this.cur_page = 1;
       this.getData();
     },
     //编辑
