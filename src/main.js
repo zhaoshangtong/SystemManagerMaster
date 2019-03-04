@@ -8,12 +8,15 @@ import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 import '../static/css/icon.css';
 import "babel-polyfill";
 import echarts from 'echarts'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
 
 Vue.prototype.$echarts = echarts
 
 Vue.use(ElementUI, {
     size: 'small'
 });
+Vue.use(MintUI)
 Vue.prototype.$axios = axios;
 Vue.prototype.$HttpApi = '/api';
 Vue.prototype.$HttpHistoryApi = '/historyApi';

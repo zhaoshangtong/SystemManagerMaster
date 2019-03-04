@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div style="margin-top:15px;">
     <div
       id="myChart"
       v-show="!IsShowMessage"
-      :style="{width:'100%',height:'540px',overflow:'auto'}"
+      :style="{width:'100%',height:'540px'}"
       v-loading="loading"
     ></div>
     <div v-show="IsShowMessage">没有需要用图表展示的tag~</div>
@@ -238,6 +238,4 @@ export default {
   }
 };
 </script>
-<style>
-@import "../../../static/css/main.css";
-</style>
+

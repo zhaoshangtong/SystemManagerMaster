@@ -154,10 +154,27 @@ export default new Router({
             path: '/login',
             component: resolve => require(['../components/page/Login.vue'], resolve)
         },
-
         {
-            path: '*',
-            redirect: '/404'
-        }
+            path: '/weixin',
+            component: resolve => require(['../components/mintui/mtHome.vue'], resolve),
+            // redirect: 'weixin/mtDashbord?type=0',
+            children:[{
+                path: 'mtDashbord',
+                component: resolve => require(['../components/mintui/mtDashbord.vue'], resolve)
+            },{
+                path: 'mtDataList',
+                component: resolve => require(['../components/mintui/mtDataList.vue'], resolve)
+            },{
+                path: 'mtRealTime',
+                component: resolve => require(['../components/mintui/mtRealTime.vue'], resolve)
+            },{
+                path: 'mtHistory',
+                component: resolve => require(['../components/mintui/mtHistory.vue'], resolve)
+            }]
+        },
+        // {
+        //     path: '*',
+        //     redirect: '/404'
+        // }
     ]
 })
