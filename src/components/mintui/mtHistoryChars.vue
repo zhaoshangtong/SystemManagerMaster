@@ -63,6 +63,22 @@ export default {
       this.IsShowMessage = true;
     }
   },
+  watch:{
+        start_date(newDate){
+            if (this.checkShow()){
+              this.start_date=newDate;
+              this.getData()
+            }
+            
+        },
+        end_date(newDate){
+            if (this.checkShow()){
+              this.end_date=newDate;
+              this.getData()
+            }
+            
+        }
+    },
   methods: {
     checkShow() {
       let id = this.id;

@@ -170,6 +170,12 @@ export default new Router({
             },{
                 path: 'mtHistory',
                 component: resolve => require(['../components/mintui/mtHistory.vue'], resolve)
+            },{
+                path: 'mtRealWarning',
+                component: resolve => require(['../components/mintui/mtRealTimeWarning.vue'], resolve)
+            },{
+                path: 'mtHistoryWarning',
+                component: resolve => require(['../components/mintui/mtHistoryWarning.vue'], resolve)
             }]
         },
         // {

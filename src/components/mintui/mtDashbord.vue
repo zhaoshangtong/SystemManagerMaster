@@ -15,13 +15,26 @@ export default {
     },
     methods:{
         goDataList(id){
-            this.$router.push({
-                path: "mtDataList",
-                query: {
-                    type:this.type,
-                    id:id
-                }
-            })
+            if(this.type==1||this.type==2){
+                this.$router.push({
+                    path: "mtDataList",
+                    query: {
+                        type:this.type,
+                        id:id
+                    }
+                })
+            }else if(this.type==3){
+                this.$router.push({
+                    path: "mtRealWarning",
+                    query: {
+                        type:this.type,
+                        id:id
+                    }
+                })
+            }else if(this.type==4){
+
+            }
+            
         }
     },
     computed:{

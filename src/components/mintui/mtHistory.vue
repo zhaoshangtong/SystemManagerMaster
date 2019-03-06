@@ -4,18 +4,19 @@
         <mt-tab-item id="1">表格</mt-tab-item>
         <mt-tab-item id="2">图表</mt-tab-item>
         </mt-navbar>
-        <div style="margin-top:5px;height:53px;">
-            <mt-field placeholder="请输入开始日期" type="date" v-model="start_date" style="float:left;width:50%;"></mt-field>
-            <mt-field placeholder="请输入结束日期" type="date" v-model="end_date" style="float:right;width:50%;"></mt-field>
-        </div>
+        
         <!-- tab-container -->
         
         <mt-tab-container-item v-if="selected=='1'">
+            <div style="margin-top:5px;height:53px;">
+                <mt-field type="date"  v-model="start_date" style="float:left;width:50%;"></mt-field>
+                <mt-field type="date"  v-model="end_date" style="float:right;width:50%;"></mt-field>
+            </div>
             <!-- 表格 -->
             <div style="width:100%;margin-top:10px;" v-show="hasData">
                 <mt-spinner v-show="timeShow" type="triple-bounce" style="position:absolute;left:50%;top:50%;transform:translate(0,-50%);"></mt-spinner>
                 <mt-loadmore :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
-                    <div v-for="(item,index) in datas" :key="index">
+                    <div v-for="(item,index) in datas" :key="index" style="margin-top:5px;border:1px solid #26a2ff;">
                         <mt-cell :title="item.time" style="color:blue;background-color:aliceblue;">
                         </mt-cell>
                         <mt-cell v-for="(_item,_index) in item.data" :key="_index" :title="_item.name" >
@@ -32,6 +33,10 @@
         </mt-tab-container-item>
         <mt-tab-container-item v-if="selected=='2'">
             <!-- 图表 -->
+            <div style="margin-top:5px;height:53px;">
+                <mt-field type="date"  v-model="start_date" style="float:left;width:50%;"></mt-field>
+                <mt-field type="date"  v-model="end_date" style="float:right;width:50%;"></mt-field>
+            </div>
             <mtHistoryChars  :start_date="start_date" :end_date="end_date"/>
         </mt-tab-container-item>
     </div>
@@ -55,18 +60,25 @@ export default {
             pickerVisible:"",
             datas:[],
             hasData:true,
-            start_date:"",
-            end_date:"",
+            start_date:this.formatDate(new Date(),2),
+            end_date:this.formatDate(new Date(),2),
             totalCount: 0,
             cur_page: 1,
             allLoaded:false,
         }
     },
+    watch:{
+        start_date(newDate){
+            this.start_date=newDate;
+            this.getData()
+        },
+        end_date(newDate){
+            this.end_date=newDate;
+            this.getData()
+        }
+    },
     mounted(){
-        this.start_date=this.formatDate(new Date(),2)
-        this.end_date=this.formatDate(new Date(),2)
         this.timeShow=true;
-        this.getData()
     },
     components:{mtHistoryChars},
     methods:{
@@ -143,6 +155,9 @@ export default {
             this.cur_page+=1;
             this.getData();
             this.$refs.loadmore.onBottomLoaded();
+        },
+        dateChange(){
+            alert(this.start_date+","+this.end_date)
         }
     },
 }
