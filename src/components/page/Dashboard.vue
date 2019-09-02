@@ -57,8 +57,19 @@ export default {
         }
       });
       }else{
-        alert("您没有权限查看当前数据！");
+        this.showMessageBox("您没有权限查看当前数据！");
       }
+    },
+    showMessageBox(message){
+      this.$alert(message, '提示', {
+          confirmButtonText: '确定',
+          callback: action => {
+            this.$message({
+              type: 'info',
+              message: `action: ${ action }`
+            });
+          }
+        });
     }
   }
 };
