@@ -21,9 +21,9 @@
                 <mt-spinner v-show="loading" type="triple-bounce" style="position:absolute;left:50%;top:50%;transform:translate(0,-50%);"></mt-spinner>
                 <mt-loadmore style="width:100%;" :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
                     <div v-for="(item,index) in datas" :key="index" style="margin-top:5px;border:1px solid #26a2ff;">
-                        <mt-cell :title="item.time" style="color:blue;background-color:aliceblue;">
+                        <mt-cell :title="item.time" style="background-color:aliceblue;">
                         </mt-cell>
-                        <mt-cell :title="select_sbei" style="color:blue;background-color:aliceblue;">
+                        <mt-cell :title="select_sbei" style="background-color:aliceblue;">
                         </mt-cell>
                         <mt-cell :title="select_case">
                         {{item.value}}

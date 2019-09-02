@@ -121,9 +121,9 @@ export default {
           continue;
         }
 
-        if (this.option.legend.data.indexOf(name) == -1) {
-          this.option.legend.data.push(name);
-        }
+        // if (this.option.legend.data.indexOf(name) == -1) {
+        //   this.option.legend.data.push(name);
+        // }
 
         var series = this.option.series.filter(o => o.name == name)[0];
         if (series == undefined) {

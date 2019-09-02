@@ -8,11 +8,11 @@
         <!-- tab-container -->
         <mt-tab-container-item v-if="selected=='1'">
             <!-- 表格 -->
-            <mt-cell :title="nowTime" style="color:blue;background-color:aliceblue;">
+            <mt-cell :title="nowTime" style="background-color:aliceblue;">
             <mt-spinner type="triple-bounce" v-show="timeShow"></mt-spinner>
             </mt-cell>
             <mt-cell-swipe v-for="(item,index) in datas" :key="index" :title="item.name" >
-                <span style="color: green">
+                <span style="color: black">
                     <mt-spinner type="triple-bounce" v-show="timeShow"></mt-spinner>
                     {{item.value}}
                 </span>
@@ -51,17 +51,20 @@ export default {
     },
     components:{realTimeCharts},
     beforeDestroy(){
+        localStorage.removeItem('mtRealTimeData'+this.itemId);
         //清除定时器
         clearInterval(this.interval);
     },
     computed:{
         datas(){
             var tags=this.tags;
-            var data=[]
+            var data=JSON.parse(localStorage.getItem('mtRealTimeData'+this.itemId));
             if(!!tags){
                 var tagArr=tags.split('|');
                 var params=this.getParams()
-                tagArr.forEach(c=>{
+                if(!!!data){
+                    data=[];
+                    tagArr.forEach(c=>{
                         var tag=c;
                         var value=""
                         var names = params.filter(o => o.tag == tag);
@@ -72,7 +75,9 @@ export default {
                         if (name != "") {
                             data.push({ name, tag, value });
                         }
-                })
+                    })
+                }
+                
                 if(this.showdata.length>0){
                     data.forEach(d=>{
                         var tag=d.tag
@@ -87,6 +92,7 @@ export default {
                     })
                 }
             }
+            localStorage.setItem('mtRealTimeData'+this.itemId,JSON.stringify(data));
             return data;
         }
     },

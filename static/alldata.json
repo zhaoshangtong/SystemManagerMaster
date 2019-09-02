@@ -1,6 +1,7 @@
 [{
         "id": 1,
         "name": "排水系统",
+        "hasRight":true,
         "img": "./../../../static/img/timg (1).jpg",
         "children": [{
                 "id": 11,
@@ -759,6 +760,7 @@
     {
         "id": 2,
         "name": "提升机",
+        "hasRight":true,
         "img": "./../../../static/img/timg (2).jpg",
         "children": [{
                 "id": 21,
@@ -1843,5 +1845,19 @@
                 ]
             }
         ]
+    },
+    {
+        "id": 3,
+        "name": "空压机",
+        "hasRight":false,
+        "img": "./../../../static/img/kongyaji.jpeg",
+        "children": []
+    },
+    {
+        "id": 4,
+        "name": "通风机",
+        "hasRight":false,
+        "img": "./../../../static/img/fengji.jpeg",
+        "children": []
     }
 ]

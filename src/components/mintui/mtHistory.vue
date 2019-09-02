@@ -1,7 +1,7 @@
 <template>
     <div style="margin:5px;">
         <mt-navbar v-model="selected">
-        <mt-tab-item id="1">表格</mt-tab-item>
+        <mt-tab-item id="1"><span style="font-size:16px;">表格</span></mt-tab-item>
         <mt-tab-item id="2">图表</mt-tab-item>
         </mt-navbar>
         
@@ -15,17 +15,20 @@
             <!-- 表格 -->
             <div style="width:100%;margin-top:10px;" v-show="hasData">
                 <mt-spinner v-show="timeShow" type="triple-bounce" style="position:absolute;left:50%;top:50%;transform:translate(0,-50%);"></mt-spinner>
-                <mt-loadmore :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore">
+                <!-- <mt-loadmore :bottom-method="loadBottom" :bottom-all-loaded="allLoaded" ref="loadmore" :auto-fill="false">
+                    
+                </mt-loadmore> -->
+                <div v-infinite-scroll="loadBottom" infinite-scroll-disabled="loading" infinite-scroll-distance="10">
                     <div v-for="(item,index) in datas" :key="index" style="margin-top:5px;border:1px solid #26a2ff;">
-                        <mt-cell :title="item.time" style="color:blue;background-color:aliceblue;">
+                        <mt-cell :title="item.time" style="background-color:aliceblue;">
                         </mt-cell>
                         <mt-cell v-for="(_item,_index) in item.data" :key="_index" :title="_item.name" >
-                            <span style="color: green">
+                            <span style="color: black">
                                 {{_item.value}}
                             </span>
                         </mt-cell>
                     </div>
-                </mt-loadmore>
+                </div>
             </div>
             <div v-show="!hasData" style="position:absolute;top:50%;transform:translate(100%,-50%);">
                 没有查到数据～
@@ -65,6 +68,7 @@ export default {
             totalCount: 0,
             cur_page: 1,
             allLoaded:false,
+            loading:false
         }
     },
     watch:{
@@ -79,6 +83,7 @@ export default {
     },
     mounted(){
         this.timeShow=true;
+        this.getData();
     },
     components:{mtHistoryChars},
     methods:{
@@ -149,12 +154,14 @@ export default {
             });
         },
         loadBottom(){
-            if(this.datas.length==this.totalCount){
+            this.loading=false;
+            if((this.datas.length>0&&this.datas.length==this.totalCount)||!this.hasData){
                 this.allLoaded = true;// 若数据已全部获取完毕
+                this.loading=true;
             }
             this.cur_page+=1;
             this.getData();
-            this.$refs.loadmore.onBottomLoaded();
+            // this.$refs.loadmore.onBottomLoaded();
         },
         dateChange(){
             alert(this.start_date+","+this.end_date)

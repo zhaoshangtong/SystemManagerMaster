@@ -2,7 +2,7 @@
     <div class="wrapper">
         
         <div class="content">
-            <mtHeader/>
+            <!-- <mtHeader/> -->
             <router-view></router-view>
         </div>
     </div>
@@ -16,7 +16,6 @@ export default {
         }
     },
     components:{mtHeader},
-
 }
 </script>
 <style>

@@ -47,13 +47,18 @@ export default {
     },
     handleBus(msg) {},
     goQueryData(menu) {
-      this.$router.push({
+      console.log(menu);
+      if(menu.hasRight){
+        this.$router.push({
         path: "/datalistview/",
         name: "datalist",
         query: {
           id: menu.id
         }
       });
+      }else{
+        alert("您没有权限查看当前数据！");
+      }
     }
   }
 };

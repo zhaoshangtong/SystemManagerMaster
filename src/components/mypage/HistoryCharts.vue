@@ -33,9 +33,9 @@ export default {
         tooltip: {
           trigger: "axis"
         },
-        legend: {
-          data: [] //tag值数组
-        },
+        // legend: {
+        //   data: [] //tag值数组
+        // },
         grid: {
           left: "3%",
           right: "3%",
@@ -123,7 +123,7 @@ export default {
     },
     getOption(result) {
       this.option.xAxis.data = [];
-      this.option.legend.data = [];
+      // this.option.legend.data = [];
       this.option.series = [];
       let id = this.id;
       let itemid = this.itemId;
@@ -155,12 +155,12 @@ export default {
               value = 0;
             }
             var series1 = this.option.series.filter(o => o.name == showName)[0];
-            if (
-              this.option.legend.data.indexOf(showName) == -1 &&
-              tag != "time"
-            ) {
-              this.option.legend.data.push(showName);
-            }
+            // if (
+            //   this.option.legend.data.indexOf(showName) == -1 &&
+            //   tag != "time"
+            // ) {
+            //   this.option.legend.data.push(showName);
+            // }
             if (series1 == undefined) {
               this.option.series.push({
                 name: showName,

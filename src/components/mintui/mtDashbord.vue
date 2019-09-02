@@ -1,7 +1,8 @@
 <template>
-    <div style="margin-top:50%">
-        <mt-button type="primary" v-for="(item,index) in datas" :key="index" 
-        @click="goDataList(item.id)" style="width:100%;height:80px;margin:30px 0;">{{item.name}}</mt-button>
+    <div class="translateCenter">
+        <div v-for="(item,index) in datas" :key="index" class="primary-div">
+            <mt-button type="primary" @click="goDataList(item.id)" class="primay-btn">{{item.name}}</mt-button>
+        </div>
     </div>
 </template>
 <script>
@@ -15,7 +16,7 @@ export default {
     },
     methods:{
         goDataList(id){
-            if(this.type==1||this.type==2){
+            if(this.type==0||this.type==1||this.type==2){
                 this.$router.push({
                     path: "mtDataList",
                     query: {
@@ -51,5 +52,15 @@ export default {
 }
 </script>
 <style>
-
+.primay-btn{
+    /* border-radius: 40px; */
+    padding: 10px;
+    width: 50%;
+}
+.primary-div{
+    text-align: center;
+    width: 100%;
+    margin:20px 0;
+}
+.translateCenter{ width: 100%; position: absolute; left:50%; top:50%; transform:translate(-50%,-50%);}
 </style>
